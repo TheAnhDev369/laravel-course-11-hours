@@ -64,4 +64,61 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
 # laravel-course-11-hours
+## Thay đổi database từ sqilite sang mysql
+
+- Sử dụng Laragon, bật laragon và chạy lên localhost  
+- Sử dụng Vscode hoặc PHPStorm, mở project và chạy lệnh:
+```php
+php artisan about 
+```
+-   Lệnh này sử dụng để:
+
+    - Hiển thị thông tin tổng quan về ứng dụng Laravel hiện tại, bao gồm:
+    - Phiên bản Laravel
+    -   Phiên bản PHP
+    -   Hệ điều hành
+    -   Trạng thái debug
+    -   Thư mục cache, config
+    -   Thông tin các package quan trọng (như Laravel Sanctum, Breeze, Nova, v.v
+
+
+-  Trước khi chạy lệnh:
+```php
+php artisan ser 
+or 
+php artisan serve
+```
+-   Lệnh này sử dụng để:
+    -   Dùng để chạy server PHP nội bộ (local development) của Laravel:
+
+-   Khởi chạy ứng dụng trên địa chỉ:
+```php
+http://127.0.0.1:8000
+```
+
+-   Tiến hành sửa đổi các thông tin trong file .env từ sqlite sang mysql như sau:
+- sqlite
+  - DB_CONNECTION=sqlite
+  - DB_HOST=127.0.0.1
+  - DB_PORT=3306
+  - DB_DATABASE=laravel
+  - DB_USERNAME=root
+  - DB_PASSWORD=
+
+- mysql
+  - DB_CONNECTION=mysql
+  - DB_HOST=127.0.0.1
+  - DB_PORT=3306
+  - DB_DATABASE=new_name_db
+  - DB_USERNAME=root
+  - DB_PASSWORD=
+
+**The database 'laravel-course-11-hours' does not exist on the 'mysql' connection.**
+
+**Would you like to create it? (yes/no) [yes]**
+
+- Nhấn chọn yes và Laravel sẽ tự động tạo databse cùng các bảng dành cho mysql.
+
+- Chạy lại lệnh ```php artisan ser```
